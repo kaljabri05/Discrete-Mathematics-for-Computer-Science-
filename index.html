@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propositional Logic Explained</title>
+    <title>Discrete Mathematics for Computer Science</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
         body {
@@ -14,7 +14,7 @@
             background-color: #f4f4f4;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             background: white;
             padding: 20px;
@@ -76,10 +76,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Propositional Logic Explained</h1>
-        <p>Welcome to an interactive guide on <span class="highlight">Propositional Logic</span>, a foundational area of logic dealing with propositions—statements that are either true or false. This website explains key concepts, logical operators, truth tables, and equivalences with clear examples and mathematical notation.</p>
+        <h1>Discrete Mathematics for Computer Science</h1>
+        <p>This guide covers <span class="highlight">Propositional Logic</span> and <span class="highlight">Predicate Logic</span>, fundamental concepts in discrete mathematics for computer science. Explore propositions, logical operators, quantifiers, and rules of inference with clear explanations and examples.</p>
 
-        <h2>1. Introduction to Propositional Logic</h2>
+        <h2>1. Propositional Logic</h2>
         <div class="definition">
             <p><span class="highlight">Proposition</span>: A declarative sentence that is either <strong>true (T)</strong> or <strong>false (F)</strong>, but not both. Propositional variables are denoted by letters like \( p, q, r, \ldots \).</p>
         </div>
@@ -99,9 +99,9 @@
             <p><span class="highlight">Propositional Calculus</span>: The study of propositions and how they combine using logical operators.</p>
         </div>
 
-        <h2>2. Compound Propositions and Logical Operators</h2>
+        <h3>1.1 Compound Propositions and Logical Operators</h3>
         <p>Compound propositions are formed by combining propositions using <span class="highlight">logical operators</span>.</p>
-        <h3>Fundamental Logical Operators</h3>
+        <h4>Fundamental Logical Operators</h4>
         <ul>
             <li><strong>Negation (\( \neg p \))</strong>: "Not \( p \)", true when \( p \) is false.</li>
             <li><strong>Conjunction (\( p \land q \))</strong>: "\( p \) AND \( q \)", true when both \( p \) and \( q \) are true.</li>
@@ -111,7 +111,7 @@
             <li><strong>Biconditional (\( p \leftrightarrow q \))</strong>: "\( p \) if and only if \( q \)", true when \( p \) and \( q \) have the same truth value.</li>
         </ul>
 
-        <h3>Negation Examples</h3>
+        <h4>Negation Examples</h4>
         <div class="example">
             <p><strong>Proposition</strong>: "Michael's PC runs Linux." (\( p \))</p>
             <p><strong>Negation</strong>: \( \neg p \): "Michael's PC does not run Linux."</p>
@@ -119,7 +119,7 @@
             <p><strong>Negation</strong>: \( \neg q \): "Vandana's smartphone has less than 32GB of memory."</p>
         </div>
 
-        <h3>Conjunction and Disjunction Examples</h3>
+        <h4>Conjunction and Disjunction Examples</h4>
         <div class="example">
             <p>Let:</p>
             <ul>
@@ -130,15 +130,15 @@
             <p><strong>Disjunction</strong>: \( p \lor q \): "Rebecca's PC has more than 16GB free hard disk space, or the processor runs faster than 1GHz."</p>
         </div>
 
-        <h2>3. Truth Tables</h2>
+        <h3>1.2 Truth Tables</h3>
         <p><span class="highlight">Truth tables</span> show the truth values of a proposition for all possible combinations of its component propositions.</p>
-        <h3>Negation Truth Table</h3>
+        <h4>Negation Truth Table</h4>
         <table>
             <tr><th>\( p \)</th><th>\( \neg p \)</th></tr>
             <tr><td>T</td><td>F</td></tr>
             <tr><td>F</td><td>T</td></tr>
         </table>
-        <h3>Conjunction Truth Table</h3>
+        <h4>Conjunction Truth Table</h4>
         <table>
             <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \land q \)</th></tr>
             <tr><td>T</td><td>T</td><td>T</td></tr>
@@ -146,7 +146,7 @@
             <tr><td>F</td><td>T</td><td>F</td></tr>
             <tr><td>F</td><td>F</td><td>F</td></tr>
         </table>
-        <h3>Disjunction Truth Table</h3>
+        <h4>Disjunction Truth Table</h4>
         <table>
             <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \lor q \)</th></tr>
             <tr><td>T</td><td>T</td><td>T</td></tr>
@@ -154,7 +154,7 @@
             <tr><td>F</td><td>T</td><td>T</td></tr>
             <tr><td>F</td><td>F</td><td>F</td></tr>
         </table>
-        <h3>Exclusive OR Truth Table</h3>
+        <h4>Exclusive OR Truth Table</h4>
         <table>
             <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \oplus q \)</th></tr>
             <tr><td>T</td><td>T</td><td>F</td></tr>
@@ -162,12 +162,7 @@
             <tr><td>F</td><td>T</td><td>T</td></tr>
             <tr><td>F</td><td>F</td><td>F</td></tr>
         </table>
-        <div class="note">
-            <p>The <span class="highlight">inclusive OR</span> (\( \lor \)) is true when at least one proposition is true, while the <span class="highlight">exclusive OR</span> (\( \oplus \)) is true when exactly one proposition is true.</p>
-        </div>
-
-        <h3>Conditional Statement</h3>
-        <p>A conditional statement \( p \rightarrow q \) ("If \( p \), then \( q \)") is false only when \( p \) is true and \( q \) is false.</p>
+        <h4>Conditional Statement Truth Table</h4>
         <table>
             <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \rightarrow q \)</th></tr>
             <tr><td>T</td><td>T</td><td>T</td></tr>
@@ -175,29 +170,7 @@
             <tr><td>F</td><td>T</td><td>T</td></tr>
             <tr><td>F</td><td>F</td><td>T</td></tr>
         </table>
-        <div class="example">
-            <p><strong>Example</strong>: If \( x = 0 \) before the statement "If \( 2+2=4 \), then \( x = x + 1 \)", then after the statement, \( x = 1 \), because \( 2+2=4 \) is true, so the consequent is executed.</p>
-        </div>
-
-        <h3>Converse, Contrapositive, and Inverse</h3>
-        <p>For a conditional statement \( p \rightarrow q \):</p>
-        <ul>
-            <li><strong>Converse</strong>: \( q \rightarrow p \)</li>
-            <li><strong>Contrapositive</strong>: \( \neg q \rightarrow \neg p \)</li>
-            <li><strong>Inverse</strong>: \( \neg p \rightarrow \neg q \)</li>
-        </ul>
-        <div class="example">
-            <p><strong>Statement</strong>: "The home team wins whenever it is raining." (\( p \rightarrow q \))</p>
-            <ul>
-                <li><strong>Converse</strong>: If the home team wins, then it is raining.</li>
-                <li><strong>Contrapositive</strong>: If the home team does not win, then it is not raining.</li>
-                <li><strong>Inverse</strong>: If it is not raining, then the home team does not win.</li>
-            </ul>
-            <p><span class="highlight">Note</span>: The contrapositive has the same truth value as the original statement.</p>
-        </div>
-
-        <h3>Biconditional Statement</h3>
-        <p>A biconditional statement \( p \leftrightarrow q \) ("\( p \) if and only if \( q \)") is true when \( p \) and \( q \) have the same truth values.</p>
+        <h4>Biconditional Statement Truth Table</h4>
         <table>
             <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \leftrightarrow q \)</th></tr>
             <tr><td>T</td><td>T</td><td>T</td></tr>
@@ -205,9 +178,6 @@
             <tr><td>F</td><td>T</td><td>F</td></tr>
             <tr><td>F</td><td>F</td><td>T</td></tr>
         </table>
-
-        <h2>4. Truth Tables for Compound Propositions</h2>
-        <p>To construct a truth table for a compound proposition, evaluate the expression step-by-step for all possible truth values of the variables.</p>
         <div class="example">
             <p><strong>Example</strong>: Construct the truth table for \( (p \lor \neg q) \rightarrow (p \land q) \).</p>
             <table>
@@ -219,19 +189,8 @@
             </table>
         </div>
 
-        <h2>5. Precedence of Logical Operators</h2>
-        <p>Logical operators follow this order of precedence:</p>
-        <ol>
-            <li>\( \neg \) (Negation)</li>
-            <li>\( \land \) (Conjunction)</li>
-            <li>\( \lor \) (Disjunction)</li>
-            <li>\( \rightarrow \) (Conditional)</li>
-            <li>\( \leftrightarrow \) (Biconditional)</li>
-        </ol>
-
-        <h2>6. Logical Equivalences</h2>
-        <p>Two propositions are <span class="highlight">logically equivalent</span> (\( p \equiv q \)) if they have the same truth values for all possible inputs (i.e., \( p \leftrightarrow q \) is a tautology).</p>
-        <h3>Key Logical Equivalences</h3>
+        <h3>1.3 Logical Equivalences</h3>
+        <p>Two propositions are <span class="highlight">logically equivalent</span> (\( p \equiv q \)) if they have the same truth values for all possible inputs.</p>
         <div class="math-block">
             <p><strong>De Morgan's Laws</strong>:</p>
             <p>\[ \neg (p \land q) \equiv \neg p \lor \neg q \]</p>
@@ -246,20 +205,8 @@
             <p>\[ p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \]</p>
             <p>\[ p \land (q \lor r) \equiv (p \land q) \lor (p \land r) \]</p>
         </div>
-        <div class="math-block">
-            <p><strong>Identity Laws</strong>:</p>
-            <p>\[ p \land T \equiv p \]</p>
-            <p>\[ p \lor F \equiv p \]</p>
-        </div>
-        <div class="math-block">
-            <p><strong>Domination Laws</strong>:</p>
-            <p>\[ p \lor T \equiv T \]</p>
-            <p>\[ p \land F \equiv F \]</p>
-        </div>
-
-        <h3>Proving Logical Equivalences</h3>
         <div class="example">
-            <p><strong>Example 1</strong>: Show that \( \neg (p \rightarrow q) \equiv p \land \neg q \).</p>
+            <p><strong>Example</strong>: Show that \( \neg (p \rightarrow q) \equiv p \land \neg q \).</p>
             <div class="math-block">
                 \[
                 \begin{aligned}
@@ -270,32 +217,286 @@
                 \]
             </div>
         </div>
+
+        <h2>2. Predicate Logic</h2>
+        <div class="definition">
+            <p><span class="highlight">Predicate</span>: A property that a subject can have, expressed as a statement involving one or more variables. Denoted as \( P(x) \), where \( P \) is the predicate and \( x \) is the subject variable.</p>
+        </div>
+        <p>Once a value is assigned to \( x \), \( P(x) \) becomes a proposition with a truth value.</p>
         <div class="example">
-            <p><strong>Example 2</strong>: Show that \( \neg (p \lor (\neg p \land q)) \equiv \neg p \land \neg q \).</p>
+            <p><strong>Example</strong>: Let \( P(x) \) be "\( x \) is greater than 3".</p>
+            <ul>
+                <li>\( P(4) \): True, because \( 4 > 3 \).</li>
+                <li>\( P(2) \): False, because \( 2 \not> 3 \).</li>
+            </ul>
+            <p><strong>Example with Multiple Variables</strong>: Let \( Q(x, y) \) be "\( x = y + 3 \)".</p>
+            <ul>
+                <li>\( Q(1, 2) \): False, because \( 1 \neq 2 + 3 \).</li>
+                <li>\( Q(3, 0) \): True, because \( 3 = 0 + 3 \).</li>
+            </ul>
+            <p><strong>Example with Three Variables</strong>: Let \( R(x, y, z) \) be "\( x + y = z \)".</p>
+            <ul>
+                <li>\( R(1, 2, 3) \): True, because \( 1 + 2 = 3 \).</li>
+                <li>\( R(0, 0, 1) \): False, because \( 0 + 0 \neq 1 \).</li>
+            </ul>
+        </div>
+
+        <h3>2.1 Quantifiers</h3>
+        <p><span class="highlight">Quantifiers</span> express the extent to which a predicate is true over a domain (universe of discourse).</p>
+        <h4>Universal Quantifier (\( \forall \))</h4>
+        <div class="definition">
+            <p><span class="highlight">Universal Quantification</span>: \( \forall x P(x) \) means "\( P(x) \) is true for all \( x \) in the domain." A single counterexample where \( P(x) \) is false disproves \( \forall x P(x) \).</p>
+        </div>
+        <div class="example">
+            <p><strong>Example</strong>: Let \( P(x) \) be "\( x + 1 > x \)", domain: all real numbers.</p>
+            <p>\( \forall x P(x) \): True, because adding 1 to any real number \( x \) results in a number greater than \( x \).</p>
+            <p><strong>Example</strong>: Let \( Q(x) \) be "\( x < 2 \)", domain: all real numbers.</p>
+            <p>\( \forall x Q(x) \): False, because \( x = 5 \) is a counterexample (\( 5 \not< 2 \)).</p>
+            <p><strong>Example</strong>: Let \( P(x) \) be "\( x^2 > 0 \)", domain: all integers.</p>
+            <p>\( \forall x P(x) \): False, because \( x = 0 \) is a counterexample (\( 0^2 = 0 \not> 0 \)).</p>
+        </div>
+
+        <h4>Existential Quantifier (\( \exists \))</h4>
+        <div class="definition">
+            <p><span class="highlight">Existential Quantification</span>: \( \exists x P(x) \) means "There exists an \( x \) in the domain such that \( P(x) \) is true." It is false only if \( P(x) \) is false for all \( x \).</p>
+        </div>
+        <div class="example">
+            <p><strong>Example</strong>: Let \( P(x) \) be "\( x > 3 \)", domain: all real numbers.</p>
+            <p>\( \exists x P(x) \): True, because there exist numbers like \( x = 4 \) where \( 4 > 3 \).</p>
+            <p><strong>Example</strong>: Let \( Q(x) \) be "\( x = x + 1 \)", domain: all real numbers.</p>
+            <p>\( \exists x Q(x) \): False, because no real number satisfies \( x = x + 1 \).</p>
+        </div>
+
+        <h4>Uniqueness Quantifier (\( \exists! \))</h4>
+        <div class="definition">
+            <p><span class="highlight">Uniqueness Quantification</span>: \( \exists! x P(x) \) means "There exists exactly one \( x \) such that \( P(x) \) is true."</p>
+        </div>
+
+        <h4>Quantifiers over Finite Domains</h4>
+        <p>For a finite domain \( \{x_1, x_2, \ldots, x_n\} \):</p>
+        <ul>
+            <li>\( \forall x P(x) \equiv P(x_1) \land P(x_2) \land \cdots \land P(x_n) \)</li>
+            <li>\( \exists x P(x) \equiv P(x_1) \lor P(x_2) \lor \cdots \lor P(x_n) \)</li>
+        </ul>
+
+        <h4>Restricted Domains</h4>
+        <p>Quantifiers can be restricted, e.g., \( \forall x < 0 (x^2 > 0) \) means "\( x^2 > 0 \) for all \( x < 0 \)".</p>
+
+        <h4>Negating Quantified Expressions</h4>
+        <div class="math-block">
+            <p><strong>De Morgan's Laws for Quantifiers</strong>:</p>
+            <p>\[ \neg (\forall x P(x)) \equiv \exists x \neg P(x) \]</p>
+            <p>\[ \neg (\exists x P(x)) \equiv \forall x \neg P(x) \]</p>
+        </div>
+        <div class="example">
+            <p><strong>Example</strong>: Negate \( \forall x \exists y (xy = 1) \).</p>
             <div class="math-block">
                 \[
                 \begin{aligned}
-                \neg (p \lor (\neg p \land q)) &\equiv \neg p \land \neg (\neg p \land q) && \text{(De Morgan's Law)} \\
-                                              &\equiv \neg p \land [\neg (\neg p) \lor \neg q] && \text{(De Morgan's Law)} \\
-                                              &\equiv \neg p \land (p \lor \neg q) && \text{(Double Negation Law)} \\
-                                              &\equiv (\neg p \land p) \lor (\neg p \land \neg q) && \text{(Distributive Law)} \\
-                                              &\equiv F \lor (\neg p \land \neg q) && \text{(Negation Law)} \\
-                                              &\equiv (\neg p \land \neg q) \lor F && \text{(Commutative Law)} \\
-                                              &\equiv \neg p \land \neg q && \text{(Identity Law)}
+                \neg (\forall x \exists y (xy = 1)) &\equiv \exists x \neg (\exists y (xy = 1)) \\
+                                                   &\equiv \exists x \forall y \neg (xy = 1) \\
+                                                   &\equiv \exists x \forall y (xy \neq 1)
                 \end{aligned}
                 \]
             </div>
         </div>
 
-        <h2>7. Logic and Bit Operators</h2>
-        <p>In computer science, logical operators are applied to <span class="highlight">bits</span> (0 for false, 1 for true). The truth tables for bitwise operations mirror those of logical operators.</p>
-        <table>
-            <tr><th>\( x \)</th><th>\( y \)</th><th>\( x \lor y \)</th><th>\( x \land y \)</th><th>\( x \oplus y \)</th></tr>
-            <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
-            <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
-            <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
-        </table>
+        <h4>Nested Quantifiers</h4>
+        <p><span class="highlight">Nested quantifiers</span> involve one quantifier within the scope of another.</p>
+        <div class="example">
+            <p><strong>Example</strong>: Let \( Q(x, y) \) be "\( x + y = 0 \)", domain: real numbers.</p>
+            <ul>
+                <li>\( \exists y \forall x Q(x, y) \): There exists a \( y \) such that \( x + y = 0 \) for all \( x \). False, because no single \( y \) works for all \( x \).</li>
+                <li>\( \forall x \exists y Q(x, y) \): For every \( x \), there exists a \( y \) such that \( x + y = 0 \). True, because for any \( x \), we can choose \( y = -x \).</li>
+            </ul>
+            <p><span class="highlight">Note</span>: The order of quantifiers matters!</p>
+        </div>
+
+        <h4>Translating Quantified Statements</h4>
+        <div class="example">
+            <p><strong>Example</strong>: Translate "The sum of two positive integers is always positive."</p>
+            <p>Logical expression: \( \forall x \forall y ((x > 0) \land (y > 0) \rightarrow (x + y > 0)) \), where \( x, y \in \mathbb{Z} \).</p>
+            <p>If the domain is positive integers: \( \forall x \forall y (x + y > 0) \), where \( x, y \in \mathbb{N} \).</p>
+        </div>
+
+        <h2>3. Rules of Inference</h2>
+        <p>An <span class="highlight">argument</span> is a sequence of propositions where the final proposition (conclusion) follows from the premises. An argument is valid if the premises being true guarantees the conclusion is true.</p>
+        <h3>3.1 Propositional Logic Rules</h3>
+        <div class="math-block">
+            <p><strong>Modus Ponens</strong>:</p>
+            \[
+            \begin{aligned}
+            p \rightarrow q \\
+            p \\
+            \hline
+            q
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Modus Tollens</strong>:</p>
+            \[
+            \begin{aligned}
+            p \rightarrow q \\
+            \neg q \\
+            \hline
+            \neg p
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Hypothetical Syllogism</strong>:</p>
+            \[
+            \begin{aligned}
+            p \rightarrow q \\
+            q \rightarrow r \\
+            \hline
+            p \rightarrow r
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Disjunctive Syllogism</strong>:</p>
+            \[
+            \begin{aligned}
+            p \lor q \\
+            \neg p \\
+            \hline
+            q
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Addition</strong>:</p>
+            \[
+            \begin{aligned}
+            p \\
+            \hline
+            p \lor q
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Simplification</strong>:</p>
+            \[
+            \begin{aligned}
+            p \land q \\
+            \hline
+            p
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Conjunction</strong>:</p>
+            \[
+            \begin{aligned}
+            p \\
+            q \\
+            \hline
+            p \land q
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Resolution</strong>:</p>
+            \[
+            \begin{aligned}
+            p \lor q \\
+            \neg p \lor r \\
+            \hline
+            q \lor r
+            \end{aligned}
+            \]
+        </div>
+
+        <h3>3.2 Fallacies</h3>
+        <p><span class="highlight">Fallacies</span> are errors in reasoning that lead to invalid arguments.</p>
+        <div class="math-block">
+            <p><strong>Fallacy of Affirming the Conclusion</strong> (Converse Error):</p>
+            \[
+            \begin{aligned}
+            p \rightarrow q \\
+            q \\
+            \hline
+            p
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Fallacy of Denying the Hypothesis</strong> (Inverse Error):</p>
+            \[
+            \begin{aligned}
+            p \rightarrow q \\
+            \neg p \\
+            \hline
+            \neg q
+            \end{aligned}
+            \]
+        </div>
+
+        <h3>3.3 Quantified Statement Rules</h3>
+        <div class="math-block">
+            <p><strong>Universal Instantiation</strong>:</p>
+            \[
+            \begin{aligned}
+            \forall x P(x) \\
+            \hline
+            P(c)
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Universal Generalization</strong>:</p>
+            \[
+            \begin{aligned}
+            P(c) \text{ for an arbitrary } c \\
+            \hline
+            \forall x P(x)
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Existential Instantiation</strong>:</p>
+            \[
+            \begin{aligned}
+            \exists x P(x) \\
+            \hline
+            P(c) \text{ for some element } c
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Existential Generalization</strong>:</p>
+            \[
+            \begin{aligned}
+            P(c) \text{ for some element } c \\
+            \hline
+            \exists x P(x)
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Universal Modus Ponens</strong>:</p>
+            \[
+            \begin{aligned}
+            \forall x (P(x) \rightarrow Q(x)) \\
+            P(a) \\
+            \hline
+            Q(a)
+            \end{aligned}
+            \]
+        </div>
+        <div class="math-block">
+            <p><strong>Universal Modus Tollens</strong>:</p>
+            \[
+            \begin{aligned}
+            \forall x (P(x) \rightarrow Q(x)) \\
+            \neg Q(a) \\
+            \hline
+            \neg P(a)
+            \end{aligned}
+            \]
+        </div>
     </div>
     <script>
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
