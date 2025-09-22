@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propositional Logic Explained</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .definition, .example, .note {
+            margin: 15px 0;
+            padding: 10px;
+            border-left: 4px solid;
+        }
+        .definition {
+            border-color: #3498db;
+            background-color: #e8f4f8;
+        }
+        .example {
+            border-color: #2ecc71;
+            background-color: #e8f8e8;
+        }
+        .note {
+            border-color: #e67e22;
+            background-color: #fef5e7;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        .math-block {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Propositional Logic Explained</h1>
+        <p>Welcome to an interactive guide on <span class="highlight">Propositional Logic</span>, a foundational area of logic dealing with propositions—statements that are either true or false. This website explains key concepts, logical operators, truth tables, and equivalences with clear examples and mathematical notation.</p>
+
+        <h2>1. Introduction to Propositional Logic</h2>
+        <div class="definition">
+            <p><span class="highlight">Proposition</span>: A declarative sentence that is either <strong>true (T)</strong> or <strong>false (F)</strong>, but not both. Propositional variables are denoted by letters like \( p, q, r, \ldots \).</p>
+        </div>
+        <div class="example">
+            <p><strong>Examples of Propositions:</strong></p>
+            <ul>
+                <li>"Today is Friday." (True or False depending on the day)</li>
+                <li>"Two plus two equals four." (Always True)</li>
+            </ul>
+            <p><strong>Non-Propositions:</strong></p>
+            <ul>
+                <li>"He is a college student?" (Question, not declarative)</li>
+                <li>"\( x + y > 0 \)" (Depends on variables, not fixed)</li>
+            </ul>
+        </div>
+        <div class="note">
+            <p><span class="highlight">Propositional Calculus</span>: The study of propositions and how they combine using logical operators.</p>
+        </div>
+
+        <h2>2. Compound Propositions and Logical Operators</h2>
+        <p>Compound propositions are formed by combining propositions using <span class="highlight">logical operators</span>.</p>
+        <h3>Fundamental Logical Operators</h3>
+        <ul>
+            <li><strong>Negation (\( \neg p \))</strong>: "Not \( p \)", true when \( p \) is false.</li>
+            <li><strong>Conjunction (\( p \land q \))</strong>: "\( p \) AND \( q \)", true when both \( p \) and \( q \) are true.</li>
+            <li><strong>Disjunction (\( p \lor q \))</strong>: "\( p \) OR \( q \)", true when at least one of \( p \) or \( q \) is true (inclusive OR).</li>
+            <li><strong>Exclusive OR (\( p \oplus q \))</strong>: True when exactly one of \( p \) or \( q \) is true.</li>
+            <li><strong>Conditional (\( p \rightarrow q \))</strong>: "If \( p \), then \( q \)", false only when \( p \) is true and \( q \) is false.</li>
+            <li><strong>Biconditional (\( p \leftrightarrow q \))</strong>: "\( p \) if and only if \( q \)", true when \( p \) and \( q \) have the same truth value.</li>
+        </ul>
+
+        <h3>Negation Examples</h3>
+        <div class="example">
+            <p><strong>Proposition</strong>: "Michael's PC runs Linux." (\( p \))</p>
+            <p><strong>Negation</strong>: \( \neg p \): "Michael's PC does not run Linux."</p>
+            <p><strong>Proposition</strong>: "Vandana's smartphone has at least 32GB of memory." (\( q \))</p>
+            <p><strong>Negation</strong>: \( \neg q \): "Vandana's smartphone has less than 32GB of memory."</p>
+        </div>
+
+        <h3>Conjunction and Disjunction Examples</h3>
+        <div class="example">
+            <p>Let:</p>
+            <ul>
+                <li>\( p \): "Rebecca's PC has more than 16GB free hard disk space."</li>
+                <li>\( q \): "The processor in Rebecca's PC runs faster than 1GHz."</li>
+            </ul>
+            <p><strong>Conjunction</strong>: \( p \land q \): "Rebecca's PC has more than 16GB free hard disk space, and the processor runs faster than 1GHz."</p>
+            <p><strong>Disjunction</strong>: \( p \lor q \): "Rebecca's PC has more than 16GB free hard disk space, or the processor runs faster than 1GHz."</p>
+        </div>
+
+        <h2>3. Truth Tables</h2>
+        <p><span class="highlight">Truth tables</span> show the truth values of a proposition for all possible combinations of its component propositions.</p>
+        <h3>Negation Truth Table</h3>
+        <table>
+            <tr><th>\( p \)</th><th>\( \neg p \)</th></tr>
+            <tr><td>T</td><td>F</td></tr>
+            <tr><td>F</td><td>T</td></tr>
+        </table>
+        <h3>Conjunction Truth Table</h3>
+        <table>
+            <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \land q \)</th></tr>
+            <tr><td>T</td><td>T</td><td>T</td></tr>
+            <tr><td>T</td><td>F</td><td>F</td></tr>
+            <tr><td>F</td><td>T</td><td>F</td></tr>
+            <tr><td>F</td><td>F</td><td>F</td></tr>
+        </table>
+        <h3>Disjunction Truth Table</h3>
+        <table>
+            <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \lor q \)</th></tr>
+            <tr><td>T</td><td>T</td><td>T</td></tr>
+            <tr><td>T</td><td>F</td><td>T</td></tr>
+            <tr><td>F</td><td>T</td><td>T</td></tr>
+            <tr><td>F</td><td>F</td><td>F</td></tr>
+        </table>
+        <h3>Exclusive OR Truth Table</h3>
+        <table>
+            <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \oplus q \)</th></tr>
+            <tr><td>T</td><td>T</td><td>F</td></tr>
+            <tr><td>T</td><td>F</td><td>T</td></tr>
+            <tr><td>F</td><td>T</td><td>T</td></tr>
+            <tr><td>F</td><td>F</td><td>F</td></tr>
+        </table>
+        <div class="note">
+            <p>The <span class="highlight">inclusive OR</span> (\( \lor \)) is true when at least one proposition is true, while the <span class="highlight">exclusive OR</span> (\( \oplus \)) is true when exactly one proposition is true.</p>
+        </div>
+
+        <h3>Conditional Statement</h3>
+        <p>A conditional statement \( p \rightarrow q \) ("If \( p \), then \( q \)") is false only when \( p \) is true and \( q \) is false.</p>
+        <table>
+            <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \rightarrow q \)</th></tr>
+            <tr><td>T</td><td>T</td><td>T</td></tr>
+            <tr><td>T</td><td>F</td><td>F</td></tr>
+            <tr><td>F</td><td>T</td><td>T</td></tr>
+            <tr><td>F</td><td>F</td><td>T</td></tr>
+        </table>
+        <div class="example">
+            <p><strong>Example</strong>: If \( x = 0 \) before the statement "If \( 2+2=4 \), then \( x = x + 1 \)", then after the statement, \( x = 1 \), because \( 2+2=4 \) is true, so the consequent is executed.</p>
+        </div>
+
+        <h3>Converse, Contrapositive, and Inverse</h3>
+        <p>For a conditional statement \( p \rightarrow q \):</p>
+        <ul>
+            <li><strong>Converse</strong>: \( q \rightarrow p \)</li>
+            <li><strong>Contrapositive</strong>: \( \neg q \rightarrow \neg p \)</li>
+            <li><strong>Inverse</strong>: \( \neg p \rightarrow \neg q \)</li>
+        </ul>
+        <div class="example">
+            <p><strong>Statement</strong>: "The home team wins whenever it is raining." (\( p \rightarrow q \))</p>
+            <ul>
+                <li><strong>Converse</strong>: If the home team wins, then it is raining.</li>
+                <li><strong>Contrapositive</strong>: If the home team does not win, then it is not raining.</li>
+                <li><strong>Inverse</strong>: If it is not raining, then the home team does not win.</li>
+            </ul>
+            <p><span class="highlight">Note</span>: The contrapositive has the same truth value as the original statement.</p>
+        </div>
+
+        <h3>Biconditional Statement</h3>
+        <p>A biconditional statement \( p \leftrightarrow q \) ("\( p \) if and only if \( q \)") is true when \( p \) and \( q \) have the same truth values.</p>
+        <table>
+            <tr><th>\( p \)</th><th>\( q \)</th><th>\( p \leftrightarrow q \)</th></tr>
+            <tr><td>T</td><td>T</td><td>T</td></tr>
+            <tr><td>T</td><td>F</td><td>F</td></tr>
+            <tr><td>F</td><td>T</td><td>F</td></tr>
+            <tr><td>F</td><td>F</td><td>T</td></tr>
+        </table>
+
+        <h2>4. Truth Tables for Compound Propositions</h2>
+        <p>To construct a truth table for a compound proposition, evaluate the expression step-by-step for all possible truth values of the variables.</p>
+        <div class="example">
+            <p><strong>Example</strong>: Construct the truth table for \( (p \lor \neg q) \rightarrow (p \land q) \).</p>
+            <table>
+                <tr><th>\( p \)</th><th>\( q \)</th><th>\( \neg q \)</th><th>\( p \lor \neg q \)</th><th>\( p \land q \)</th><th>\( (p \lor \neg q) \rightarrow (p \land q) \)</th></tr>
+                <tr><td>T</td><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+                <tr><td>T</td><td>F</td><td>T</td><td>T</td><td>F</td><td>F</td></tr>
+                <tr><td>F</td><td>T</td><td>F</td><td>F</td><td>F</td><td>T</td></tr>
+                <tr><td>F</td><td>F</td><td>T</td><td>T</td><td>F</td><td>F</td></tr>
+            </table>
+        </div>
+
+        <h2>5. Precedence of Logical Operators</h2>
+        <p>Logical operators follow this order of precedence:</p>
+        <ol>
+            <li>\( \neg \) (Negation)</li>
+            <li>\( \land \) (Conjunction)</li>
+            <li>\( \lor \) (Disjunction)</li>
+            <li>\( \rightarrow \) (Conditional)</li>
+            <li>\( \leftrightarrow \) (Biconditional)</li>
+        </ol>
+
+        <h2>6. Logical Equivalences</h2>
+        <p>Two propositions are <span class="highlight">logically equivalent</span> (\( p \equiv q \)) if they have the same truth values for all possible inputs (i.e., \( p \leftrightarrow q \) is a tautology).</p>
+        <h3>Key Logical Equivalences</h3>
+        <div class="math-block">
+            <p><strong>De Morgan's Laws</strong>:</p>
+            <p>\[ \neg (p \land q) \equiv \neg p \lor \neg q \]</p>
+            <p>\[ \neg (p \lor q) \equiv \neg p \land \neg q \]</p>
+        </div>
+        <div class="math-block">
+            <p><strong>Conditional-Disjunction Equivalence</strong>:</p>
+            <p>\[ p \rightarrow q \equiv \neg p \lor q \]</p>
+        </div>
+        <div class="math-block">
+            <p><strong>Distributive Laws</strong>:</p>
+            <p>\[ p \lor (q \land r) \equiv (p \lor q) \land (p \lor r) \]</p>
+            <p>\[ p \land (q \lor r) \equiv (p \land q) \lor (p \land r) \]</p>
+        </div>
+        <div class="math-block">
+            <p><strong>Identity Laws</strong>:</p>
+            <p>\[ p \land T \equiv p \]</p>
+            <p>\[ p \lor F \equiv p \]</p>
+        </div>
+        <div class="math-block">
+            <p><strong>Domination Laws</strong>:</p>
+            <p>\[ p \lor T \equiv T \]</p>
+            <p>\[ p \land F \equiv F \]</p>
+        </div>
+
+        <h3>Proving Logical Equivalences</h3>
+        <div class="example">
+            <p><strong>Example 1</strong>: Show that \( \neg (p \rightarrow q) \equiv p \land \neg q \).</p>
+            <div class="math-block">
+                \[
+                \begin{aligned}
+                \neg (p \rightarrow q) &\equiv \neg (\neg p \lor q) && \text{(Conditional-Disjunction Equivalence)} \\
+                                     &\equiv \neg (\neg p) \land \neg q && \text{(De Morgan's Law)} \\
+                                     &\equiv p \land \neg q && \text{(Double Negation Law)}
+                \end{aligned}
+                \]
+            </div>
+        </div>
+        <div class="example">
+            <p><strong>Example 2</strong>: Show that \( \neg (p \lor (\neg p \land q)) \equiv \neg p \land \neg q \).</p>
+            <div class="math-block">
+                \[
+                \begin{aligned}
+                \neg (p \lor (\neg p \land q)) &\equiv \neg p \land \neg (\neg p \land q) && \text{(De Morgan's Law)} \\
+                                              &\equiv \neg p \land [\neg (\neg p) \lor \neg q] && \text{(De Morgan's Law)} \\
+                                              &\equiv \neg p \land (p \lor \neg q) && \text{(Double Negation Law)} \\
+                                              &\equiv (\neg p \land p) \lor (\neg p \land \neg q) && \text{(Distributive Law)} \\
+                                              &\equiv F \lor (\neg p \land \neg q) && \text{(Negation Law)} \\
+                                              &\equiv (\neg p \land \neg q) \lor F && \text{(Commutative Law)} \\
+                                              &\equiv \neg p \land \neg q && \text{(Identity Law)}
+                \end{aligned}
+                \]
+            </div>
+        </div>
+
+        <h2>7. Logic and Bit Operators</h2>
+        <p>In computer science, logical operators are applied to <span class="highlight">bits</span> (0 for false, 1 for true). The truth tables for bitwise operations mirror those of logical operators.</p>
+        <table>
+            <tr><th>\( x \)</th><th>\( y \)</th><th>\( x \lor y \)</th><th>\( x \land y \)</th><th>\( x \oplus y \)</th></tr>
+            <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+            <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+        </table>
+    </div>
+    <script>
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    </script>
+</body>
+</html>
